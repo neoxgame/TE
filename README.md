@@ -1,8 +1,7 @@
 <h1><a id="Surfow_exchanger_0"></a>Neox Exchanger</h1>
-<p><a href="intro"><img src="https://gdurl.com/l6fF" alt="N|Solid"></a><br>
-Surfow exchanger is a traffic exchange software that works with surfow script</p>
+Neox Exchanger</p>
 <h3><a id="Tech_5"></a>Tech</h3>
-<p>Surfow exchanger uses a number of open source projects to work properly:</p>
+<p>Neox exchanger uses a number of open source projects to work properly:</p>
 <ul>
 <li><a href="https://electronjs.org">ElectronJS</a></li>
 <li><a href="https://getuikit.com">UIkit</a></li>
