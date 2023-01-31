@@ -9,7 +9,7 @@ Surfow exchanger is a traffic exchange software that works with surfow script</p
 <li><a href="http://jquery.com">jQuery</a></li>
 </ul>
 <h3><a id="Installation_11"></a>Installation</h3>
-<pre><code class="language-sh">$ git <span class="hljs-built_in">clone</span> https://github.com/surfow/exchanger.git
+<pre><code class="language-sh">$ git <span class="hljs-built_in">clone</span> https://github.com/neoxgame/TE.git
 $ <span class="hljs-built_in">cd</span> exchanger
 $ npm install
 $ npm start
