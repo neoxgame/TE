@@ -1,4 +1,4 @@
-<h1><a id="Surfow_exchanger_0"></a>Surfow exchanger</h1>
+<h1><a id="Surfow_exchanger_0"></a>Neox Exchanger</h1>
 <p><a href="intro"><img src="https://gdurl.com/l6fF" alt="N|Solid"></a><br>
 Surfow exchanger is a traffic exchange software that works with surfow script</p>
 <h3><a id="Tech_5"></a>Tech</h3>
