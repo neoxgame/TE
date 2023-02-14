@@ -30,7 +30,7 @@
         "appId": "com.electron.Exchanger",
         "copyright": "Copyright © 2018 Hassan Azzi",
         "productName": "Exchanger",
-        "electronVersion": "3.0.1",
+        "electronVersion": "20.1.4",
         "asar": true,
         "directories": {
             "app": "D:\\surfow_app",
