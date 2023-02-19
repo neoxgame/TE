@@ -29,7 +29,7 @@ function run_session(data)
         width: 1280,
         titleBarStyle: 'hidden',
         acceptFirstMouse: true,
-        transparent: false,
+        transparent: true,
         frame: false,
         show: false
     })
