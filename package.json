@@ -1,10 +1,10 @@
 {
-    "name": "NeoxLLc",
-    "version": "2.0.1",
+    "name": "Exchanger",
+    "version": "1.0.1",
     "description": "traffic exchange software",
     "main": "system.js",
     "scripts": {
-        "start": "electron --no-sandbox .",
+        "start": "electron .",
         "pack:osx": "electron-packager . Exchanger --out=../dist/osx --asar=true --platform=darwin --arch=x64 --icon=build/icon.icns --prune=true",
         "pack:linux": "electron-packager . Exchanger --out=../dist/linux --asar=true --platform=linux --arch=x64 --icon=build/png/512x512.png --prune=true",
         "pack:win32": "electron-packager . Exchanger --out=../dist/win --asar=true --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true",
@@ -19,7 +19,7 @@
     "author": "Hassan Azzi",
     "license": "CC0-1.0",
     "devDependencies": {
-        "electron": "4.0.0",
+        "electron": "^3.0.1",
         "electron-builder": "^20.38.2",
         "electron-packager": "^13.0.0",
         "electron-toolkit": "^1.0.24",
@@ -30,7 +30,7 @@
         "appId": "com.electron.Exchanger",
         "copyright": "Copyright © 2018 Hassan Azzi",
         "productName": "Exchanger",
-        "electronVersion": "20.1.4",
+        "electronVersion": "3.0.1",
         "asar": true,
         "directories": {
             "app": "D:\\surfow_app",
