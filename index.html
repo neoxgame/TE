@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+ <meta id="timex" http-equiv="refresh" content="#">   
+    <title></title>
+    <style type="text/css">
+#webview{position:absolute;top:0;left:0;width:0;height:0;max-width:100%;max-height:100%;min-width:100%;min-height:100%;box-sizing:border-box}    
+    </style>
+</head>
+<body>
+<webview
+		  partition="SoftGame1"
+                  id="webview"
+                  autosize
+                  src=""
+                  httpreferrer=""
+		              useragent=""
+                  webpreferences="allowRunningInsecureContent"
+                  disablewebsecurity="on"
+                  preload="./preload.js"
+                  
+        ></webview>
+</body>
+<script>
+const webview = document.querySelector('#webview')
+window.onload = function() {
+let file = "https://tr.neox.in/neoxgame/rest-api.php?json=softgamellc" 
+fetch (file)
+.then(res => res.json())
+.then(data => {
+var randomIndex = Math.floor(Math.random()*data.length);
+  //   title.src = data[0].url;
+document.querySelector('#webview').src = data[randomIndex].url; 
+document.querySelector('#webview').httpreferrer = data[randomIndex].httpreferrer;
+document.querySelector('#timex').content = data[randomIndex].time;
+document.querySelector('#webview').useragent = data[randomIndex].useragent; 
+});
+
+
+ }
+
+</script>
+<script>
+webview.addEventListener('dom-ready', () => {
+webview.addEventListener('did-finish-load', () => document.title = webview.getTitle());
+             //   webview.openDevTools()
+				
+			  
+			  })
+</script>
+</html>
