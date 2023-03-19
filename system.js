@@ -40,7 +40,7 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
     callback(true);
 });
 
-app.on('ready', function () { win1 = new BrowserWindow({ height: 250, width: 350, autoHideMenuBar: true, webPreferences: { nodeIntegration: true, webviewTag: true } })
+app.on('ready', function () { win1 = new BrowserWindow({ height: 250, width: 350, autoHideMenuBar: true, webPreferences: { nodeIntegration: true, webviewTag: true, preload: path.join(__dirname, 'preload.js') } })
 const options = { extraHeaders: 'pragma: no-cache\n'}
 win1.webContents.loadFile('index.html', options)
 //win1.webContents.openDevTools()
