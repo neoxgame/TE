@@ -1,7 +1,7 @@
 {
-    "name": "Exchanger",
+    "name": "SoftGame",
     "version": "1.0.1",
-    "description": "traffic exchange software",
+    "description": "SoftGame software",
     "main": "system.js",
     "scripts": {
         "start": "electron .",
@@ -16,7 +16,7 @@
         "System",
         "Surfow"
     ],
-    "author": "Hassan Azzi",
+    "author": "SoftGame LLc",
     "license": "CC0-1.0",
     "devDependencies": {
         "electron": "^3.0.1",
