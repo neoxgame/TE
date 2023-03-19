@@ -1,10 +1,13 @@
-// Modules to control application life and create native browser window
+
 const { ipcMain, app, dialog, remote, BrowserWindow, session } = require('electron')
 const path = require('path')
 const url = require('url');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let startWindow
+let startWindow1
+let startWindow2
+let startWindow3
+
 var openedurl = "";
 var surfow_protocol = 't-exchange';
 
@@ -37,9 +40,9 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
     callback(true);
 });
 
-function createStart() {
+function createStart1() {
   // Create the browser window.
- startWindow = new BrowserWindow({
+ startWindow1 = new BrowserWindow({
       width: 500,
       height: 260,
       titleBarStyle: 'hidden',
@@ -52,30 +55,116 @@ function createStart() {
 	  }
   })
 
-  startWindow.loadFile('bin/data1.html');
+  startWindow1.loadFile('bin/data1.html');
 
-  startWindow.setResizable(false);
-  startWindow.setMaximizable(false);
+  startWindow1.setResizable(false);
+  startWindow1.setMaximizable(false);
 
   if (process.platform == 'win32') {
     openedurl = process.argv.slice(1)
   }
 
 
-  startWindow.once('ready-to-show', () => {
+  startWindow1.once('ready-to-show', () => {
       send_opened_url(openedurl);
-      startWindow.show();
-      startWindow.focus();
+      startWindow1.show();
+      startWindow1.focus();
       /* REMOVE THIS */
 	  //startWindow.toggleDevTools();
   })
 
   // Emitted when the window is closed.
-  startWindow.on('closed', function () {
+  startWindow1.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    startWindow = null
+    startWindow1 = null
+  })
+
+}
+
+function createStart2() {
+  // Create the browser window.
+ startWindow2 = new BrowserWindow({
+      width: 500,
+      height: 260,
+      titleBarStyle: 'hidden',
+      acceptFirstMouse: true,
+      transparent: true,
+      frame: false,
+      show: false,
+	  webPreferences: {
+		preload: path.join(__dirname, 'bin/data5.html')
+	  }
+  })
+
+  startWindow2.loadFile('bin/data1.html');
+
+  startWindow2.setResizable(false);
+  startWindow2.setMaximizable(false);
+
+  if (process.platform == 'win32') {
+    openedurl = process.argv.slice(1)
+  }
+
+
+  startWindow2.once('ready-to-show', () => {
+      send_opened_url(openedurl);
+      startWindow2.show();
+      startWindow2.focus();
+      /* REMOVE THIS */
+	  //startWindow.toggleDevTools();
+  })
+
+  // Emitted when the window is closed.
+  startWindow2.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    startWindow2 = null
+  })
+
+}
+
+function createStart3() {
+  // Create the browser window.
+ startWindow3 = new BrowserWindow({
+      width: 500,
+      height: 260,
+      titleBarStyle: 'hidden',
+      acceptFirstMouse: true,
+      transparent: true,
+      frame: false,
+      show: false,
+	  webPreferences: {
+		preload: path.join(__dirname, 'bin/data5.html')
+	  }
+  })
+
+  startWindow3.loadFile('bin/data1.html');
+
+  startWindow3.setResizable(false);
+  startWindow3.setMaximizable(false);
+
+  if (process.platform == 'win32') {
+    openedurl = process.argv.slice(1)
+  }
+
+
+  startWindow3.once('ready-to-show', () => {
+      send_opened_url(openedurl);
+      startWindow3.show();
+      startWindow3.focus();
+      /* REMOVE THIS */
+	  //startWindow.toggleDevTools();
+  })
+
+  // Emitted when the window is closed.
+  startWindow3.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    startWindow3 = null
   })
 
 }
@@ -84,7 +173,9 @@ function createStart() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function(){
-    createStart();
+    createStart1();
+    createStart2();
+    createStart3();
     session.defaultSession.on('will-download', (event, item, webContents) => {
         event.preventDefault()
     });
@@ -102,8 +193,10 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (startWindow === null) {
-    createStart()
+  if (startWindow2 === null) {
+    createStart1();
+    createStart2();
+    createStart3();
   }
 })
 
@@ -119,6 +212,8 @@ function send_opened_url(openedurl)
 {
     if(openedurl != "")
     {
-        startWindow.webContents.send('opened-url', openedurl.toString().replace(surfow_protocol+"://", "").replace("/", ""));
+        startWindow1.webContents.send('opened-url', openedurl.toString().replace(surfow_protocol+"://", "").replace("/", ""));
+        startWindow2.webContents.send('opened-url', openedurl.toString().replace(surfow_protocol+"://", "").replace("/", ""));
+        startWindow3.webContents.send('opened-url', openedurl.toString().replace(surfow_protocol+"://", "").replace("/", ""));
     }
 }
