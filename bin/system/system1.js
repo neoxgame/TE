@@ -27,6 +27,7 @@ function run_session(data)
     /// main
     mainWindow = new BrowserWindow({
         width: 1280,
+        height: 960,
         titleBarStyle: 'hidden',
         acceptFirstMouse: true,
         transparent: true,
